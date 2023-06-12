@@ -124,93 +124,85 @@ mapCountryData(datamap.map, nameColumnToPlot="average_by_country")
 ##Japan
 seafood_japan<-seafood%>%filter(country=="Japan")
 
-mean_values1 <- seafood_japan%>%
+seafood_japan%>%
   summarize(pelagi = mean(pelagic, na.rm = TRUE),
             crustaceans = mean(crustaceans, na.rm = TRUE),
             cephalopods = mean(cephalopods, na.rm = TRUE),
             demersal = mean(demersal, na.rm = TRUE),
             freshwater = mean(freshwater, na.rm = TRUE),
             molluscs = mean(molluscs, na.rm = TRUE),
-            marine = mean(marine, na.rm = TRUE))
-
-
-mean_values1%>%
-  pivot_longer(everything(), names_to = "Variable", values_to = "Mean")%>%
-  mutate(Variable = fct_reorder(Variable, Mean, .desc=TRUE))%>%
-  ggplot(aes(x = Variable, y = Mean)) +
-  geom_bar(stat = "identity", fill = "blue") +
-  labs(x = "Seafood Types", y = "Quantity in Tonnes", 
-       title = "The average of each Seafood type's production in Japan") +
-  scale_y_continuous(labels = comma)
+            marine = mean(marine, na.rm = TRUE))%>%
+            pivot_longer(everything(), names_to = "Variable", values_to = "Mean")%>%
+            mutate(Variable = fct_reorder(Variable, Mean, .desc=TRUE))%>%
+            ggplot(aes(x = Variable, y = Mean)) +
+            geom_bar(stat = "identity", fill = "blue") +
+            labs(x = "Seafood Types", y = "Quantity in Tonnes", 
+            title = "The average of each Seafood type's production in Japan") +
+            scale_y_continuous(labels = comma)
 
 
 ##Hongkong
 seafood_hongkong<-seafood%>%filter(country=="Hong Kong")
 
-mean_values2 <- seafood_hongkong%>%
+seafood_hongkong%>%
   summarize(pelagi = mean(pelagic, na.rm = TRUE),
             crustaceans = mean(crustaceans, na.rm = TRUE),
             cephalopods = mean(cephalopods, na.rm = TRUE),
             demersal = mean(demersal, na.rm = TRUE),
             freshwater = mean(freshwater, na.rm = TRUE),
             molluscs = mean(molluscs, na.rm = TRUE),
-            marine = mean(marine, na.rm = TRUE))
+            marine = mean(marine, na.rm = TRUE))%>%
+            pivot_longer(everything(), names_to = "Variable", values_to = "Mean")%>%
+            mutate(Variable = fct_reorder(Variable, Mean, .desc=TRUE))%>%
+            ggplot(aes(x = Variable, y = Mean)) +
+            geom_bar(stat = "identity", fill = "blue") +
+            labs(x = "Seafood Types", y = "Quantity in Tonnes", 
+            title = "The average of each Seafood type's production in Hongkong") +
+            scale_y_continuous(labels = comma)
 
-
-mean_values2%>%
-  pivot_longer(everything(), names_to = "Variable", values_to = "Mean")%>%
-  mutate(Variable = fct_reorder(Variable, Mean, .desc=TRUE))%>%
-  ggplot(aes(x = Variable, y = Mean)) +
-  geom_bar(stat = "identity", fill = "blue") +
-  labs(x = "Seafood Types", y = "Quantity in Tonnes", 
-       title = "The average of each Seafood type's production in Hongkong") +
-  scale_y_continuous(labels = comma)
 
 ##Malay
 
 seafood_malay<-seafood%>%filter(country=="Malaysia")
 
-mean_values3 <- seafood_malay%>%
+seafood_malay%>%
   summarize(pelagi = mean(pelagic, na.rm = TRUE),
             crustaceans = mean(crustaceans, na.rm = TRUE),
             cephalopods = mean(cephalopods, na.rm = TRUE),
             demersal = mean(demersal, na.rm = TRUE),
             freshwater = mean(freshwater, na.rm = TRUE),
             molluscs = mean(molluscs, na.rm = TRUE),
-            marine = mean(marine, na.rm = TRUE))
+            marine = mean(marine, na.rm = TRUE))%>%
+            pivot_longer(everything(), names_to = "Variable", values_to = "Mean")%>%
+            mutate(Variable = fct_reorder(Variable, Mean, .desc=TRUE))%>%
+            ggplot(aes(x = Variable, y = Mean)) +
+            geom_bar(stat = "identity", fill = "blue") +
+            labs(x = "Seafood Types", y = "Quantity in Tonnes", 
+            title = "The average of each Seafood type's production in Malaysia") +
+            scale_y_continuous(labels = comma)
 
 
-mean_values3%>%
-  pivot_longer(everything(), names_to = "Variable", values_to = "Mean")%>%
-  mutate(Variable = fct_reorder(Variable, Mean, .desc=TRUE))%>%
-  ggplot(aes(x = Variable, y = Mean)) +
-  geom_bar(stat = "identity", fill = "blue") +
-  labs(x = "Seafood Types", y = "Quantity in Tonnes", 
-       title = "The average of each Seafood type's production in Malaysia") +
-  scale_y_continuous(labels = comma)
 
 ##Korea
 
 seafood_korea<-seafood%>%filter(country=="South Korea")
 
-mean_values4 <- seafood_korea%>%
+seafood_korea%>%
   summarize(pelagi = mean(pelagic, na.rm = TRUE),
             crustaceans = mean(crustaceans, na.rm = TRUE),
             cephalopods = mean(cephalopods, na.rm = TRUE),
             demersal = mean(demersal, na.rm = TRUE),
             freshwater = mean(freshwater, na.rm = TRUE),
             molluscs = mean(molluscs, na.rm = TRUE),
-            marine = mean(marine, na.rm = TRUE))
+            marine = mean(marine, na.rm = TRUE))%>%
+            pivot_longer(everything(), names_to = "Variable", values_to = "Mean")%>%
+            mutate(Variable = fct_reorder(Variable, Mean, .desc=TRUE))%>%
+            ggplot(aes(x = Variable, y = Mean)) +
+            geom_bar(stat = "identity", fill = "blue") +
+            labs(x = "Seafood Types", y = "Quantity in Tonnes", 
+            title = "The average of each Seafood type's production in South Korea") +
+            scale_y_continuous(labels = comma)
 
-
-mean_values4%>%
-  pivot_longer(everything(), names_to = "Variable", values_to = "Mean")%>%
-  mutate(Variable = fct_reorder(Variable, Mean, .desc=TRUE))%>%
-  ggplot(aes(x = Variable, y = Mean)) +
-  geom_bar(stat = "identity", fill = "blue") +
-  labs(x = "Seafood Types", y = "Quantity in Tonnes", 
-       title = "The average of each Seafood type's production in South Korea") +
-  scale_y_continuous(labels = comma)
 
 
 #Statistical Analysis: Consumption with Country.
